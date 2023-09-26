@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Template strings codelab</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/assignmentPage.css">
+    <script src="../js/assignmentpage.js" defer></script>
+
+    <link rel="stylesheet" href="../../opgavefiler/css/firstpage.css">
+    <script src="../../opgavefiler/js/firstPage.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <section class="assignmentTopSection">
+            <h1>Template strings</h1>
+            <nav>
+                <a href="../../index.html">back</a>
+            </nav>
+            <br>
+            <p>Her er opgaver med template strings. Opgaverne indeholder også andet kode vi har været igenem, så det kan
+                være en god ide, at finde de gamle code labs frem.</p>
+            <br>
+
+            <strong>
+                <p>JavaScript skal skrives i filen: /opgavefiler/js/firstPage.js </p>
+                <p>evt. CSS skal skrives i filen: /opgavefiler/css/firstpage.css </p>
+            </strong>
+
+
+    </header>
+    </section>
+    <section class="assignmentArea">
+        <header class="easy"></header>
+        <article>
+            <h2>Opgave 1</h2>
+            <p>
+                Opgaven går ud på at oprette en besked, som inkluderer navnet på en person og antallet af år,
+                personen
+                har
+                arbejdet
+                i en bestemt virksomhed.
+            </p>
+            <h3>Instruktioner</h3>
+            <ol>
+                <li>Opret to konstanter: en for navnet på personen og en for antallet af år, personen har arbejdet i
+                    virksomheden.
+                </li>
+                <li>Brug en template string til at oprette en besked, der inkluderer både navnet på personen og
+                    antallet
+                    af år, personen har arbejdet i virksomheden. Beskeden skal have følgende format: "Hej [navn] du har
+                    nu arbejdet i vores virksomhed i [år] år."</li>
+                <li>Vis beskeden på skærmen ved hjælp af <code>element.innerHTML</code>.</li>
+            </ol>
+            <p>
+                Når du har lavet opgaven, skal resultatet blive vist i elementet med id "message" i din browser.
+                Resultatet skal have følgende
+                format: <br> &lt;h2&gt;Hej Keld&lt;/h2&gt; du har nu arbejdet i vores virksomhed i 3 år."
+            </p>
+            <h3>message her</h3>
+            <div id="message"></div>
+            <br>
+            <button class="hintbutton">Hint</button>
+            <div class="hint">
+
+                <pre><code>
+        const navn = "Alice";
+        const aarIvirksomhed = 3;
+        const besked = `Hej ${navn}
+        du har arbejdet i vores virksomhed i ${aarIvirksomhed} år.`;
+        console.log(besked);
+    </code></pre>
+            </div>
+        </article>
+
+
+
+    </section>
+
+
+    <section class="assignmentArea">
+        <header class="medium"></header>
+        <article>
+            <h2>Opgave 2</h2>
+            <p>
+                Du skal bygge en liste over produkter fra en fiktiv online butik. Hver produktlinje skal
+                indeholde produktets navn, beskrivelse og pris, og disse oplysninger skal vises ved hjælp af template
+                strings i JavaScript.
+                <br>
+                Applikationen skal oprette elementer i HTML elementet med id "produktListe"
+                Applikationen skal hente produktdata fra et array, der indeholder objekter med
+                produktinformation.
+                <br>
+                Produkterne vises på siden ved hjælp af en template string. Du kan bruge en HTML-template, hvor du
+                indsætter dataene i passende steder ved hjælp af placeholders, som du kan erstatte med produktdata.
+            </p>
+            <pre><code>
+            const myData=[
+            { "navn": "T-shirt",
+            "beskrivelse": "En t-shirt lavet af bomuld",
+            "pris": 99 },
+            { "navn": "Jeans",
+            "beskrivelse": "Blå denim jeans med straight fit",
+            "pris": 299
+            },
+            { "navn": "Hættetrøje",
+            "beskrivelse": "En grå hættetrøje med lynlås",
+            "pris": 199 }
+            ]             
+        </code></pre>
+
+            Din html skal have følgende struktur: <br>
+            <pre><code>
+        &lt;article class="produkt"&gt;
+            &lt;h2&gt;${produkt.navn}&lt;/h2&gt;
+            &lt;p&gt;${produkt.beskrivelse}&lt;/p&gt;
+            &lt;p&gt;Pris: ${produkt.pris} kr.&lt;/p&gt;
+        &lt;/article&gt;
+    </code></pre>
+            <br>
+            <h3>produkt liste her</h3>
+            <div id="produktListe"></div>
+            <br>
+        </article>
+    </section>
+
+    <section class="assignmentArea">
+        <header class="hard"></header>
+        <article>
+            <h2>Opgave 3</h2>
+            <h3>Opgave beskrivelse</h3>
+            <p>
+                Du skal oprette en webapplikation ved hjælp JavaScript, der giver brugeren mulighed for
+                at indtaste en liste over navne og deres alder. Applikationen skal derefter sortere listen efter alder
+                og vise den sorteret liste på siden ved hjælp af template strings i JavaScript.
+            </p>
+
+            <h3>Krav:</h3>
+            <p>
+                Applikationen skal have et HTML-formularfelt, hvor brugeren kan indtaste navne og aldre på personer.Når
+                brugeren klikker på en knap, skal applikationen indsamle data fra formularfeltet og gemme dem i en
+                JavaScript-variabel.
+                Applikationen skal sortere listen efter alder ved hjælp JavaScript- array sorteringsfunktion. Den
+                sorteret liste skal vises på siden ved hjælp af en template string i JavaScript. <br>
+                Template stringen skal indeholde både navn og alder for hver person på listen.
+            </p>
+            <br>
+            <h3>Formular</h3>
+            <form id="formular">
+
+                <input type="text" name="navn" id="" placeholder="dit navn">
+                <input type="text" name="alder" id="" placeholder="din alder">
+                <button id="indsend-knap">Indsend</button>
+
+
+            </form>
+            <div id="person-liste"></div>
+
+            <br>
+            <button class="hintbutton">Hint</button>
+
+            <div class="hint">
+
+                <h3>Eksempelkode:</h3>
+                <p>
+                    Her er et eksempel på, hvordan du kan hente data fra en form, oprette en sorteringsfunktion i
+                    JavaScript og bruge en
+                    template string til at vise den sorterede liste på siden:
+                </p>
+                <pre>
+    <code>
+        // array med person data
+        const myPersons = [];
+
+        // find form elementer
+        const myForm = document.getElementById('formular');
+        const submitButton = document.getElementById('indsend-knap');
+        const personList = document.getElementById('person-liste');
+
+        // submit button event listner med arrow function
+        submitButton.addEventListener('click', (event) => {
+        event.preventDefault();
+        const myFormFelter = myForm.querySelectorAll('input');
+
+        /* push resultatet fra formen ind på myPersons.
+        vi ved der er 2 elementer derfor direkte adressering ved hjælp af []
+        */
+        myPersons.push({
+        navn: myFormFelter[0].value,
+        alder: myFormFelter[1].value,
+        });
+        
+        // Sorter listen efter alder og vis den på siden
+        const sorteretMyPersons = sorterEfterAlder(myPersons);
+        showList(sorteretMyPersons);
+        });
+
+        // view code
+        function showList(sorteretMyPersons) {
+        let html = '';
+        sorteretMyPersons.map((person) => {
+        // html template.
+        html += `&lt;li&gt;${person.navn} er ${person.alder} år gammel.&lt;/li&gt;`;
+        });
+        personList.innerHTML = html;
+        }
+
+        // Funktion til at sortere listen efter alder
+        function sorterEfterAlder(myPersons) {
+        return myPersons.sort((a, b) => a.alder - b.alder);
+        }
+    </code>
+</pre>
+            </div>
+        </article>
+    </section>
+
+
+    <footer>
+        <nav>
+            <a href="../../index.html">back</a>
+        </nav>
+    </footer>
+
+</body>
+
+</html>
